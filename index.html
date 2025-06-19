@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Keluar?</title>
+  <title>Halaman Unik</title>
   <style>
     body {
       background-color: white;
@@ -20,7 +20,21 @@
       padding: 10px 20px;
       font-size: 14px;
       cursor: pointer;
+      margin: 10px;
+    }
+
+    .output {
       margin-top: 20px;
+      font-size: 20px;
+      color: #cc0066;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 14px;
+      margin: 5px;
+      width: 160px;
+      text-align: center;
     }
   </style>
 </head>
@@ -30,7 +44,13 @@
     lu nyari apaan, POKEEE!!
   </div>
 
-  <button onclick="mainkan()">Exit</button>
+  <button onclick="mainkan()">keluar</button>
+  <button onclick="hitung()">gatau</button>
+
+  <input type="number" id="angka1" placeholder="Angka pertama">
+  <input type="number" id="angka2" placeholder="Angka kedua">
+
+  <div class="output" id="hasil"></div>
 
   <audio id="audio" loop>
     <source src="mpo.mp3" type="audio/mpeg">
@@ -46,6 +66,10 @@
         audio.play();
         sudahMain = true;
       }
+    }
+
+    function hitung() {
+      document.getElementById("hasil").innerText = "alloww";
     }
   </script>
 
