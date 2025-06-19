@@ -22,15 +22,34 @@
       cursor: pointer;
       margin-top: 20px;
     }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #eee;
+      padding: 20px 30px;
+      box-shadow: 0 0 10px #999;
+      border-radius: 10px;
+      z-index: 999;
+    }
+
+    .popup button {
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
 
-  <div>
-    lu nyari paan, POKEEE!!
-  </div>
-
+  <div>lu nyari paan, POKEEE!!</div>
   <button onclick="mainkan()">get ouut</button>
+
+  <div id="popup" class="popup">
+    <p id="popupText"></p>
+    <button onclick="tutupPopup()">OK</button>
+  </div>
 
   <audio id="audio" loop>
     <source src="mpo.mp3" type="audio/mpeg">
@@ -42,16 +61,22 @@
 
     function mainkan() {
       const audio = document.getElementById("audio");
+      const popup = document.getElementById("popup");
+      const popupText = document.getElementById("popupText");
 
       if (!sudahMain) {
-        alert("hehe, klik lagi");
-        setTimeout(() => {
-          audio.play();
-        }, 100); 
+        popupText.textContent = "hehe, klik lagi";
+        audio.play();
         sudahMain = true;
       } else {
-        alert("awokawok");
+        popupText.textContent = "awokawok";
       }
+
+      popup.style.display = "block";
+    }
+
+    function tutupPopup() {
+      document.getElementById("popup").style.display = "none";
     }
   </script>
 
