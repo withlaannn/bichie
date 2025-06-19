@@ -27,13 +27,13 @@
 <body>
 
   <div>
-    lu nyari apaan, POKEEE!!
+    lu nyari paan, POKEEE!!
   </div>
 
   <button onclick="mainkan()">Exit</button>
 
   <audio id="audio" loop>
-    <source src="https://raw.githubusercontent.com/withlaannn/bio/main/mpo.mp3" type="audio/mpeg">
+    <source src="mpo.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
   </audio>
 
@@ -42,8 +42,9 @@
       const audio = document.getElementById("audio");
 
       if (audio.paused) {
-        audio.play();
         alert("hehe, klik lagi");
+        
+        audio.play();
       } else {
         alert("awokawok");
       }
