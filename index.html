@@ -27,7 +27,7 @@
 <body>
 
   <div>
-    lu nyari paan, POKEEE!!
+    lu nyari apaan, POKEEE!!
   </div>
 
   <button onclick="mainkan()">Exit</button>
@@ -38,13 +38,15 @@
   </audio>
 
   <script>
+    let sudahMain = false;
+
     function mainkan() {
       const audio = document.getElementById("audio");
 
-      if (audio.paused) {
-        alert("hehe, klik lagi");
-        
+      if (!sudahMain) {
         audio.play();
+        sudahMain = true;
+        alert("hehe, klik lagi");
       } else {
         alert("awokawok");
       }
